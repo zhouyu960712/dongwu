@@ -2,87 +2,189 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>文章列表</title>
-  <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/iconfont.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link type="text/css" rel="stylesheet" href="js/jedate/css/jedate.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章列表</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="js/jedate/css/jedate.css">
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="common_title">
-      文章编辑
+    <div class="container-fluid">
+        <div class="common_title">
+            文章编辑
+        </div>
+        <div class="container-fluid common_con" id="editBox">
+            <form class="form-horizontal article_form" id="editForm">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">文章标题：</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="title" class="form-control" id="inputEmail3" value="文章标题文字">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">文章封面：</label>
+                    <div class="col-sm-10">
+                        <img src="" class="article_cover" id="preview">
+                        <input type="file" id="exampleInputFile">
+                        <!-- 隐藏域 -->
+                        <!-- <input type="hidden" id="hiddenImg" name="cover"> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">文章类别：</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="optionBox" name="categoryId">
+                          
+                        </select>
+                    </div>
+                </div>
+                <div class=" form-group ">
+                    <label for="inputEmail3 " class="col-sm-2 control-label ">发布时间：</label>
+                    <div class="col-sm-4 ">
+
+                        <div class="input-group">
+                            <input type="text" name="date" class="form-control" value="2019-05-17" id="dateinput">
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" onclick="jeDate('#dateinput',{trigger:false,format: 'YYYY-MM-DD'})"><i
+                                  class="iconfont icon-icondate"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">文章内容：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="rich_content" name="content" placeholder="文章内容" value="文章内容">
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-sm-offset-2 col-sm-10 ">
+                        <button type="submit " class="btn btn-success ">修改</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="container-fluid common_con">
-      <form class="form-horizontal article_form">
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">文章标题：</label>
-          <div class="col-sm-10">
-            <input type="email" name="title" class="form-control title" id="inputEmail3" value="文章标题文字">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">文章封面：</label>
-          <div class="col-sm-10">
-            <img src="images/pic06.jpg" class="article_cover">
-            <input name="cover" type="file" id="exampleInputFile">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">文章类别：</label>
-          <div class="col-sm-4">
-            <select class="form-control category" name="categoryId">
-              <option>类别一</option>
-              <option>类别二</option>
-              <option>类别三</option>
-              <option selected>类别四</option>
-              <option>类别五</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">发布时间：</label>
-          <div class="col-sm-4">
+</body>
 
-            <div class="input-group">
-              <input type="text" name="date" class="form-control" value="2019-05-17" id="dateinput">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button" onclick="jeDate('#dateinput',{trigger:false,format: 'YYYY-MM-DD'})"><i
-                    class="iconfont icon-icondate"></i></button>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">文章内容：</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="rich_content" placeholder="文章内容" value="文章内容">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-success btn-edit">修改</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jedate/js/jedate.js"></script>
+<script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="js/tinymce/js/tinymce_setup.js"></script>
+<script src="./js/template-web.js"></script>
 
-  <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/jedate/js/jedate.js"></script>
-  <script src="js/tinymce/js/tinymce/tinymce.min.js"></script>
-  <script src="js/tinymce/js/tinymce_setup.js"></script>
-  <script src="./js/template-web.js"></script>
+<!-- 业务逻辑代码 -->
+<script type="text/html" id="optionTpl">
+    {{each data}}
+    <option {{currentCategory==$value.id ? "selected" : ""}} value="{{$value.id}}">{{$value.name}}</option>
+    {{/each}}
+</script>
 
-  <!-- 业务逻辑代码 -->
-  <script>
-    
-  </script>
+<script>
+    console.log(window.parent.location.href);
+    // 调用函数，获取浏览器地址栏中的id参数
+    var id = getUrlParams('id');
+    // console.log(id);
+
+    // 封装一个函数，用于从浏览器的地址栏中获取指定的参数
+    function getUrlParams(name) {
+        var paramsAry = location.search.substr(1).split('&');
+        // 循环数据
+        for (var i = 0; i < paramsAry.length; i++) {
+            var tmp = paramsAry[i].split('=');
+            if (tmp[0] == name) {
+                return tmp[1];
+            }
+        }
+        // 参数不存在，则返回-1
+        return -1;
+    }
+    //当前管理员是在修改文章操作
+    if (id != -1) {
+        //根据id获取文章的详细信息
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8080/api/v1/admin/article/search',
+            data: {
+                id: id
+            },
+            success: function(response) {
+                console.log(response);
+                var id_1 = response.data.categoryId
+                console.log(id_1);
+
+                //把用户信息显示在表单中
+                $('#editForm input[name="title"]').val(response.data.title);
+                $('#editForm input[name="date"]').val(response.data.date);
+                $('#editForm input[name="content"]').val(response.data.content);
+                $('#editForm input[name="cover"]').val(response.data.cover);
+                console.log(response.data.cover);
+
+                //img标签设置src
+                $('#preview').prop('src', response.data.cover);
+                //获取文章分类
+                $.ajax({
+                    type: "get",
+                    url: 'http://localhost:8080/api/v1/admin/category/list',
+                    success: function(categories) {
+                        console.log(response.data.categoryId);
+                        categories.currentCategory = id_1;
+                        console.log(categories);
+
+                        // categories.attr('currentCategory', id_1);
+                        var html = template('optionTpl', categories);
+                        console.log(html);
+
+                        $('#optionBox').html(html);
+                    }
+                })
+
+            },
+        });
+
+    };
+
+
+    //上传图片
+    $('#exampleInputFile').on('change', function() {
+        //图片的预览
+        var file = this.files[0];
+        console.dir($('#exampleInputFile')[0]);
+
+        var imgURL = URL.createObjectURL(file);
+        $('#preview').prop('src', imgURL);
+        console.log(imgURL);
+
+        //设置隐藏域
+        $('#hiddenImg').val(imgURL);
+    })
+
+    // 表单注册提交事件,实现修改功能
+    $('#editForm').on('submit', function() {
+        var formData = new FormData(this);
+        formData.set('content', tinyMCE.activeEditor.getContent())
+        formData.append('cover', $('#exampleInputFile')[0].files[0])
+        formData.append('id', id);
+        $.ajax({
+                url: 'http://localhost:8080/api/v1/admin/article/edit',
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    console.log(response);
+                    location.href = "/admin/article_list.html"
+                }
+            })
+            //阻止表单默认提交行为
+        return false
+    })
+</script>
 </body>
 
 </html>
