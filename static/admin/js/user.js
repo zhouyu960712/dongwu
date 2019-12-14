@@ -10,31 +10,37 @@ $('#userBox').on('change', '#exampleInputFile', function() {
 });
 
 
-// 用户信息修改功能
-// 给表单注册提交（submit）事件
-$('#userBox').on('submit', '#uesrForm', function() {
-    // 收集用户表单填写的数据
-    var formData = new FormData(this);
-    // console.log(formData.get('userPic'))
 
-    $.ajax({
-        type: 'post',
-        url: 'http://localhost:8080/api/v1/admin/user/edit',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            // console.log(response);
-            alert('用户信息已修改');
-        },
-        error: function(u) {
-            //邮箱参数错误
-            alert('你的邮箱格式不对');
-        }
+// 用户信息修改功能
+function modiFicaTion() {
+    console.log('3211');
+
+    // 给表单注册提交（submit）事件
+    $('#userBox').on('submit', '#uesrForm', function() {
+        // 收集用户表单填写的数据
+        var formData = new FormData(this);
+        // console.log(formData.get('userPic'))
+
+        $.ajax({
+            type: 'post',
+            url: 'http://localhost:8080/api/v1/admin/user/edit',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // console.log(response);
+                // alert('用户信息已修改');
+            },
+            error: function(u) {
+                //邮箱参数错误
+                alert('你的邮箱格式不对');
+            }
+        });
+        // 阻止表单的重新刷新
+        return false;
     });
-    // 阻止表单的重新刷新
-    return false;
-});
+};
+
 
 
 
@@ -54,14 +60,25 @@ $.ajax({
     }
 })
 
-//  没有退出接口，取消退出功能
-// //修改时退出登录状态
-// $('#userBox').on('click', '#logout', function() {
-//     var isConfirm = confirm('修改信息需要重新登录，确认修改吗？')
-//     if (isConfirm) {
-//         alert('修改成功，即将退出')
-//         modiFicaTion();
-//         location.reload();
-//         location.href = 'login.html';
-//     }
-// })
+
+
+
+
+
+//修改时退出登录状态
+$('#userBox').on('click', '#logout', function() {
+    var isConfirm = confirm('修改信息需要重新登录，确认修改吗？')
+    if (isConfirm) {
+        alert('修改成功，即将退出')
+            // 调用获取用户信息函数
+        modiFicaTion();
+
+        //跳转到登录页面
+        // top.location.href = 'login.html';
+        // window.top.location.replace('login.html');
+        parent.location.href = 'login.html';
+    } else {
+        alert('信息未修改')
+        return false;
+    }
+})
