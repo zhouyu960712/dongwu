@@ -13,7 +13,7 @@ $('#userBox').on('change', '#exampleInputFile', function() {
 
 // 用户信息修改功能
 function modiFicaTion() {
-    console.log('3211');
+    // console.log('3211');
 
     // 给表单注册提交（submit）事件
     $('#userBox').on('submit', '#uesrForm', function() {

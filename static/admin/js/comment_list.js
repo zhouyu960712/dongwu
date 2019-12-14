@@ -3,7 +3,7 @@ $.ajax({
     type: 'get',
     url: 'http://localhost:8080/api/v1/admin/comment/search',
     success: function(response) {
-        console.log(response);
+        // console.log(response);
         // 模板拼接
         var html = template('listTpl', { data: response.data.data });
         // console.log(html);
@@ -71,7 +71,7 @@ $('#listBox').on('click', '.success', function() {
             url: 'http://localhost:8080/api/v1/admin/comment/pass',
             data: { id },
             success: function(response) {
-                console.log(response);
+                // console.log(response);
                 location.reload()
             }
         })
@@ -93,7 +93,7 @@ $('#listBox').on('click', '.success', function() {
             url: 'http://localhost:8080/api/v1//admin/comment/reject',
             data: { id },
             success: function(response) {
-                console.log(response);
+                // console.log(response);
                 location.reload()
             }
         })
@@ -111,7 +111,7 @@ $('#listBox').on('click', '.decline', function() {
             url: 'http://localhost:8080/api/v1/admin/comment/delete',
             data: { id: id },
             success: function(response) {
-                console.log(response);
+                // console.log(response);
                 location.reload()
             }
         })

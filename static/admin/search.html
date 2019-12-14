@@ -86,7 +86,7 @@
 </script>
 
 <script>
-    console.log(window.parent.location.href);
+    // console.log(window.parent.location.href);
     // 调用函数，获取浏览器地址栏中的id参数
     var id = getUrlParams('id');
     // console.log(id);
@@ -114,16 +114,16 @@
                 id: id
             },
             success: function(response) {
-                console.log(response);
+                // console.log(response);
                 var id_1 = response.data.categoryId
-                console.log(id_1);
+                // console.log(id_1);
 
                 //把用户信息显示在表单中
                 $('#editForm input[name="title"]').val(response.data.title);
                 $('#editForm input[name="date"]').val(response.data.date);
                 $('#editForm input[name="content"]').val(response.data.content);
                 $('#editForm input[name="cover"]').val(response.data.cover);
-                console.log(response.data.cover);
+                // console.log(response.data.cover);
 
                 //img标签设置src
                 $('#preview').prop('src', response.data.cover);
@@ -132,13 +132,13 @@
                     type: "get",
                     url: 'http://localhost:8080/api/v1/admin/category/list',
                     success: function(categories) {
-                        console.log(response.data.categoryId);
+                        // console.log(response.data.categoryId);
                         categories.currentCategory = id_1;
-                        console.log(categories);
+                        // console.log(categories);
 
                         // categories.attr('currentCategory', id_1);
                         var html = template('optionTpl', categories);
-                        console.log(html);
+                        // console.log(html);
 
                         $('#optionBox').html(html);
                     }
@@ -156,7 +156,7 @@
         var file = this.files[0];
         var imgURL = URL.createObjectURL(file);
         $('#preview').prop('src', imgURL);
-        console.log(imgURL);
+        // console.log(imgURL);
 
         //设置隐藏域
         $('#hiddenImg').val(imgURL);
@@ -175,7 +175,7 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    console.log(response);
+                    // console.log(response);
                     location.href = "/admin/article_list.html"
                 }
             })

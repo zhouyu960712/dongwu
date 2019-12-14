@@ -2,7 +2,7 @@ $.ajax({
     type: 'get',
     url: 'http://localhost:8080/api/v1/admin/category/list',
     success: function(response) {
-        console.log(response);
+        // console.log(response);
         // 用模板引擎渲染到页面
         var html = template('creatgoyTpl', { data: response.data });
         // console.log(html);
@@ -19,7 +19,7 @@ $('#exampleInputFile').on('change', function() {
     var imgURL = URL.createObjectURL(file);
     $('#preview').prop('src', imgURL);
     //打印图片的地址
-    console.log(imgURL);
+    // console.log(imgURL);
 });
 
 

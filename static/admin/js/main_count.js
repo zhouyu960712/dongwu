@@ -137,7 +137,7 @@ $.ajax({
     type: 'get',
     url: 'http://localhost:8080/api/v1/admin/data/category',
     success: function (response) {
-        console.log(response);
+        // console.log(response);
 
         var oPie = echarts.init(document.getElementById('pie_show'));
         var oPieopt = {
@@ -226,7 +226,7 @@ $.ajax({
             type: 'get',
             url: 'http://localhost:8080/api/v1/admin/data/visit',
             success: function (response03) {
-                console.log(response03);
+                // console.log(response03);
                 var oColumn = echarts.init(document.getElementById('column_show'));
                 var oColumnopt = {
                     title: {
@@ -325,44 +325,8 @@ $.ajax({
                     }
                 }
 
-                // for (var i = 0; i < response.date[0].all_count.length; i++) {
-                //     // console.log(response.data[i].day_count);
-                //     oColumnopt.legend.data.push(response.date[0].all_count[i].type);
-
-                //     if (i % 2 == 0) {
-                //         oColumnopt.series.push({
-                //             name: response03.data[0].all_count[i].type,
-                //             type: 'bar',
-                //             barWidth: 100 / response03.data[0].all_count.length,
-                //             itemStyle: {
-                //                 normal: { areaStyle: { type: 'default' }, color: '#fc30' + 'a' + i }
-                //             },
-                //             data: []
-                //         });
-                //         for(var j=0;j<response03.data.length;j++){
-                //             oColumnopt.series[i].data.push(response03.data[j].all_count[i].count)
-                //         }
-
-                //     } else {
-                //         oColumnopt.series.push({
-                //             name: response03.data[0].all_count[i].type,
-                //             type: 'bar',
-                //             barWidth: 100 / response03.data[0].all_count.length,
-                //             itemStyle: {
-                //                 normal: { areaStyle: { type: 'default' }, color: '#20fd' + '3' + i }
-                //             },
-                //             data: []
-                //         });
-                //         for(var j=0;j<response03.data.length;j++){
-                //             oColumnopt.series[i].data.push(response03.data[j].all_count[i].count)
-                //         }
-                //     }
-                // };
-                console.log(oColumnopt.legend.data);
-                console.log(oColumnopt.series);
-
                 oColumn.setOption(oColumnopt);
-                oColumn.setOption(oColumnopt)
+                // oColumn.setOption(oColumnopt)
 
             }
         })

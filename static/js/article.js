@@ -48,7 +48,7 @@ $('#commentForm').on('submit',function(){
             articleId:id,
         },
         success:function(response){
-            console.log(response);
+            // console.log(response);
             location.reload();
 
             
@@ -63,7 +63,7 @@ $.ajax({
     url:'http://localhost:8080/api/v1/index/get_comment',
     data:{articleId:id},
     success:function(response){
-        console.log(response);
+        // console.log(response);
 
         var html=template('comtentsTpl',{data:response.data});
         // console.log(html);

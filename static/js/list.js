@@ -14,11 +14,11 @@ function getUrlParams(name) {
 
 
 var key = getUrlParams('key');
-console.log(key);
+// console.log(key);
 if(key==-1){
     //1-获取关键词（地址栏中的id参数）
     var id = getUrlParams('id');
-    console.log(id);
+    // console.log(id);
     key='';
 }else{
     id='';
@@ -29,7 +29,7 @@ $.ajax({
     url: 'http://localhost:8080/api/v1/index/search',
     data: { type:id,key:key },
     success: function (response) {
-        console.log(response);
+        // console.log(response);
 
         var html = template('listTpl', {data: response.data.data});
         // console.log(html);

@@ -19,7 +19,7 @@ $.ajax({
     type:'get',
     url:'http://localhost:8080/api/v1/index/latest',
     success:function(response){
-        console.log(response);
+        // console.log(response);
 
         var html=template('listTpl',{data:response.data});
         
