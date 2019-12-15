@@ -30,10 +30,12 @@ function modiFicaTion() {
             success: function(response) {
                 // console.log(response);
                 // alert('用户信息已修改');
+                alert('修改成功，即将退回登录页重新登录');
+                parent.location.href = 'login.html';
             },
             error: function(u) {
                 //邮箱参数错误
-                alert('你的邮箱格式不对');
+                alert('您输入的邮箱格式不对，请重新输入');
             }
         });
         // 阻止表单的重新刷新
@@ -69,16 +71,13 @@ $.ajax({
 $('#userBox').on('click', '#logout', function() {
     var isConfirm = confirm('修改信息需要重新登录，确认修改吗？')
     if (isConfirm) {
-        alert('修改成功，即将退出')
+        
             // 调用获取用户信息函数
         modiFicaTion();
 
         //跳转到登录页面
         // top.location.href = 'login.html';
         // window.top.location.replace('login.html');
-        parent.location.href = 'login.html';
-    } else {
-        alert('信息未修改')
-        return false;
-    }
+        
+    } 
 })

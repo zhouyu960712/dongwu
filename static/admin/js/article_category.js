@@ -54,11 +54,12 @@ $('#xinzengBox').on('click', '.edit', function() {
 // // 通过事件监听给关闭按钮添加事件
 $('#addModal').on('click', '.guan', function() {
     $('#addModal').fadeOut();
+    location.reload();
 });
 
 
 
-// 通过事件监听给修改按钮注册提交事件
+// 通过事件监听给编辑按钮注册提交事件
 $('#addModal').on('submit', '#xiugaiCategory', function() {
     // alert('ok')
     // 获取管理员在表单中输入的内容

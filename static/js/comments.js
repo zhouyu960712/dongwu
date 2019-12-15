@@ -32,6 +32,7 @@ $.ajax({
     }
 });
 
+
 $.ajax({
     type:'get',
     url:'http://localhost:8080/api/v1/index/latest_comment',
@@ -45,6 +46,7 @@ $.ajax({
 
     }
 });
+
 
 $.ajax({
     type:'get',

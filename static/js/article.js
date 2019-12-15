@@ -51,7 +51,6 @@ $('#commentForm').on('submit',function(){
             // console.log(response);
             location.reload();
 
-            
         }
     })
 
