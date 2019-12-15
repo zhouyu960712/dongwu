@@ -47,6 +47,7 @@ $('#xinzengBox').on('click', '.edit', function() {
             var html = template('bianjiTpl', response);
             // console.log(html);
             $('#formBox').html(html);
+            $('#fenleiming').text('修改');
         }
     })
 });
